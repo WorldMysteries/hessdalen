@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0f0e">
+  <meta name="description" content="A local observation journal: save the date, time, direction and description of the light right in your browser.">
+  <title>Observation journal — the Hessdalen lights</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body data-page="notes">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="brand" href="index.html" aria-label="Hessdalen — home"><span class="brand-mark" aria-hidden="true"><span></span></span><span class="brand-copy"><strong>HESSDALEN</strong><small>FIELD DOSSIER · 01</small></span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu"><span></span><span></span></button>
+      <nav class="primary-nav" id="primary-nav" aria-label="Main navigation">
+        <a href="phenomenon.html" data-page-link="phenomenon">Phenomenon</a><a href="timeline.html" data-page-link="timeline">Timeline</a><a href="science.html" data-page-link="science">Science</a><a href="field-notes.html" data-page-link="notes">Field notes</a>
+      </nav>
+      <a class="header-index" href="timeline.html"><span class="header-index-dot"></span> STUDY THE CASE</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero page-hero--notes">
+      <div class="container page-hero-inner">
+        <p class="eyebrow"><span class="live-dot"></span> 05 / FIELD LOG</p>
+        <h1>Write down<br><em>what you see.</em></h1>
+        <p class="page-lead">A useful observation starts with precise details. This form saves your notes only in the current browser — no account, no sending to a server.</p>
+        <div class="page-hero-meta"><span>LOCAL STORAGE</span><span>PRIVATE / 01</span></div>
+      </div>
+      <span class="page-hero-orb page-hero-orb--one" aria-hidden="true"></span>
+      <span class="page-hero-orb page-hero-orb--two" aria-hidden="true"></span>
+    </section>
+
+    <section class="section notes-section">
+      <div class="container notes-layout">
+        <div class="notes-intro reveal">
+          <p class="eyebrow eyebrow--muted">OBSERVATION CARD</p>
+          <h2 class="section-title">Details matter more<br><em>than guesses.</em></h2>
+          <p class="body-copy">Note the time and direction, describe the colour, movement and duration. If it is safe, record the weather conditions and take a photo noting the vantage point.</p>
+          <div class="note-tip"><span class="note-tip-icon">i</span><p><strong>Do not rush to name the source.</strong><br>First record what is observed; add theories separately.</p></div>
+          <div class="privacy-note"><span class="privacy-lock" aria-hidden="true">▣</span><p><strong>Privacy:</strong> the entries are stored in the localStorage of this browser. They are not sent to a server. Clearing browser data may delete the journal.</p></div>
+        </div>
+
+        <div class="notes-workspace reveal">
+          <form class="note-form" id="note-form">
+            <div class="form-heading"><span class="form-number">01</span><div><p class="eyebrow eyebrow--muted">NEW ENTRY</p><h2>Add an observation</h2></div></div>
+            <div class="form-grid">
+              <label class="field"><span>Date <i>*</i></span><input type="date" name="date" required></label>
+              <label class="field"><span>Local time</span><input type="time" name="time"></label>
+              <label class="field"><span>Direction</span><select name="direction"><option value="">Not noted</option><option>North</option><option>North-east</option><option>East</option><option>South-east</option><option>South</option><option>South-west</option><option>West</option><option>North-west</option><option>Unknown</option></select></label>
+              <label class="field"><span>Colour</span><select name="color"><option value="">Not noted</option><option>White</option><option>Yellow</option><option>Orange</option><option>Red</option><option>Blue / light blue</option><option>Other / varied</option></select></label>
+              <label class="field field--wide"><span>Duration (approximate)</span><input type="text" name="duration" maxlength="80" placeholder="For example: about 30 seconds"></label>
+              <label class="field field--wide"><span>What exactly did you observe? <i>*</i></span><textarea name="details" rows="5" maxlength="600" required placeholder="Shape, brightness, movement, observation conditions…"></textarea><small class="field-hint">Do not add addresses, names or other personal data.</small></label>
+            </div>
+            <div class="form-actions"><button class="button button--amber" type="submit">Save the entry <span aria-hidden="true">＋</span></button><p class="form-status" id="form-status" aria-live="polite"></p></div>
+          </form>
+
+          <section class="saved-notes" aria-labelledby="saved-title">
+            <div class="saved-heading"><div><p class="eyebrow eyebrow--muted">LOCAL STORAGE</p><h2 id="saved-title">Your entries <span class="entry-count" id="entry-count">0</span></h2></div><div class="saved-actions"><button type="button" class="small-action" id="export-notes" disabled>EXPORT CSV</button><button type="button" class="small-action small-action--danger" id="clear-notes" disabled>CLEAR</button></div></div>
+            <div class="note-list" id="note-list" aria-live="polite"></div>
+            <p class="empty-notes" id="empty-notes">No entries yet.<br><span>Add your first note in the form above.</span></p>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <section class="section notes-reminder-section">
+      <div class="container notes-reminder reveal"><span class="reminder-mark">!</span><p><strong>Safety first.</strong> Do not observe from the roadway, do not shine light into people’s or drivers’ eyes, and do not approach unknown objects.</p><a href="science.html" class="underlined-link">Why verification matters <span aria-hidden="true">→</span></a></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-top"><a class="brand brand--footer" href="index.html"><span class="brand-mark" aria-hidden="true"><span></span></span><span class="brand-copy"><strong>HESSDALEN</strong><small>FIELD DOSSIER · 01</small></span></a><p>The mysterious lights of the Hessdalen valley<br><span>An independent information project</span></p><a class="footer-up" href="#main">TOP ↑</a></div>
+    <div class="container footer-bottom"><span>Facts checked against the materials of Project Hessdalen.</span><span><a href="https://untoldarchive.com/ru/">UntoldArchive.com</a></span></div>
+  </footer>
+</body>
+</html>
